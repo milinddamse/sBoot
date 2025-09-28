@@ -8,24 +8,10 @@ stages:
     jobs:
       - job: buildJobs
         steps:
-          - task: Maven@4
-            inputs:
-              azureSubscription: 'DjAzureSPNConnection'
-              mavenPomFile: 'pom.xml'
-              goals: 'clean package'
-              options: '-DskipTests'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              javaHomeOption: 'JDKVersion'
-              mavenVersionOption: 'Default'
-              mavenAuthenticateFeed: false
-              effectivePomSkip: false
-              sonarQubeRunAnalysis: false
-          
           - task: Docker@2
             inputs:
               containerRegistry: 'docker0395'
               repository: 'springboot'
               command: 'buildAndPush'
-              Dockerfile: '**/Dockerfile'
+              Dockerfile: '/Dockerfile'
           
