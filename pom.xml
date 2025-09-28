@@ -125,6 +125,12 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>3.3.2</version> <!-- works with Java 11/17 -->
+			</plugin>
+
 			<!-- Spring boot support -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
