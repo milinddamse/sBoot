@@ -13,5 +13,5 @@ stages:
               containerRegistry: 'docker0395'
               repository: 'springboot'
               command: 'buildAndPush'
-              Dockerfile: '/Dockerfile'
+              Dockerfile: 'Dockerfile'
           
