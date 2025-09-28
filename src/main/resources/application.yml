@@ -11,6 +11,7 @@ spring.datasource:
 
 server:
   port: 8090
+  address: 0.0.0.0
 
 #todo: make sure to always enable security in production
 security:
