@@ -12,6 +12,8 @@ stages:
             inputs:
               azureSubscription: 'DjAzureSPNConnection'
               mavenPomFile: 'pom.xml'
+              goals: 'clean package'
+              options: '-DskipTests'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
               javaHomeOption: 'JDKVersion'
@@ -19,3 +21,4 @@ stages:
               mavenAuthenticateFeed: false
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
+          
