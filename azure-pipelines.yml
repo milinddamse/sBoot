@@ -22,3 +22,10 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
           
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'docker0395'
+              repository: 'springboot'
+              command: 'buildAndPush'
+              Dockerfile: '**/Dockerfile'
+          
