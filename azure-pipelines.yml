@@ -1,10 +1,10 @@
 trigger: none
 
 pool:
-  name: LinuxPool
+  name: MilindLinux
 
 variables:
-  imageRepository: dhanu0395/springboot
+  imageRepository: milinddamse/springboot
   tags: $(Build.BuildId)
 
 stages:
@@ -14,7 +14,7 @@ stages:
         steps:
           - task: Maven@4
             inputs:
-              azureSubscription: 'DjAzureSPNConnection'
+              azureSubscription: 'milind_b11'
               mavenPomFile: 'pom.xml'
               goals: 'clean package'
               options: '-DskipTests'
@@ -28,7 +28,7 @@ stages:
 
           - task: Docker@2
             inputs:
-              containerRegistry: 'docker0395'
+              containerRegistry: 'milinddamse'
               repository: $(imageRepository)
               command: 'buildAndPush'
               Dockerfile: 'Dockerfile'
